@@ -1,0 +1,19 @@
+name = "Niki's Logic"
+version = "1.0"
+extra_files = "extras"
+intro = "src/intro.lean"
+
+
+[[worlds]]
+name = "Tutorial"
+id = 1
+levels = [ "src/tutorial.lean" ]
+
+[[worlds]]
+name = "Logical statements"
+id = 2
+parents = [1]
+levels = [ "src/logic_pt1.lean",
+            "src/logic_pt2.lean", ]
+
+
