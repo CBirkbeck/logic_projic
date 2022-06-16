@@ -2,19 +2,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2022-06-16 10:55:26.823260\n"
+"POT-Creation-Date: 2022-06-16 12:06:49.918761\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 
 #: game_config
-msgid "Niki's Logic"
+msgid "De Morgan's game"
 msgstr ""
 
 #: intro
 msgid ""
-"# Captain de Morgan's logic Game\n"
+"# Captain De Morgan's logic Game\n"
 "\n"
-"## By UCL\n"
+"## By Chris Birkbeck and Niki Kalaydzhieva\n"
 "\n"
 "Learn some logic yo\n"
 "\n"
@@ -503,14 +503,14 @@ msgid "Time for a boss fight!\n"
 msgstr ""
 
 #: world_config
-msgid "Logical ands"
+msgid "Distributivity, Associativity and Absorption"
 msgstr ""
 
-#: Logical ands level 1
+#: Distributivity, Associativity and Absorption level 1
 msgid "and what?"
 msgstr ""
 
-#: Logical ands level 1
+#: Distributivity, Associativity and Absorption level 1
 msgid ""
 "Lets now look at making some more complicated logical statements. Recall "
 "that if we have two\n"
@@ -613,10 +613,14 @@ msgid ""
 "hQ : Q\n"
 "```\n"
 "\n"
+"You can also use it for \"or's\". Specifically, if you have `h : P ∨ Q` then "
+"`cases h` will\n"
+"give you two goals, one where `P` is true and one where `Q` is true.\n"
+"\n"
 "\n"
 msgstr ""
 
-#: Logical ands level 1
+#: Distributivity, Associativity and Absorption level 1
 msgid ""
 "\n"
 "If your goal is an \"and\" goal:\n"
@@ -638,9 +642,12 @@ msgid ""
 "```\n"
 "⊢ Q\n"
 "```\n"
+"Moreover, if you have an iff `↔` then splitting it will give you two goals, "
+"`→` and `←` to prove.\n"
+"\n"
 msgstr ""
 
-#: Logical ands level 1
+#: Distributivity, Associativity and Absorption level 1
 msgid ""
 "\n"
 "If your goal is\n"
@@ -656,7 +663,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: Logical ands level 1
+#: Distributivity, Associativity and Absorption level 1
 msgid ""
 "\n"
 "If you have a hypothesis\n"
@@ -676,48 +683,52 @@ msgid ""
 "hQ : Q\n"
 "```\n"
 "\n"
+"You can also use it for \"or's\". Specifically, if you have `h : P ∨ Q` then "
+"`cases h` will\n"
+"give you two goals, one where `P` is true and one where `Q` is true.\n"
+"\n"
 msgstr ""
 
-#: Logical ands level 2
+#: Distributivity, Associativity and Absorption level 2
 msgid "absorpsion laws pt 1"
 msgstr ""
 
-#: Logical ands level 2
+#: Distributivity, Associativity and Absorption level 2
 msgid "Lets try and prove that $P ∧ (P ∨ Q)$ is equivalent to $P$\n"
 msgstr ""
 
-#: Logical ands level 3
+#: Distributivity, Associativity and Absorption level 3
 msgid "absorpsion laws pt 2"
 msgstr ""
 
-#: Logical ands level 3
+#: Distributivity, Associativity and Absorption level 3
 msgid "Lets try and prove that $P ∨ (P ∧ Q)$ is equivalent to $P$\n"
 msgstr ""
 
-#: Logical ands level 4
+#: Distributivity, Associativity and Absorption level 4
 msgid "Associative laws pt 1"
 msgstr ""
 
-#: Logical ands level 4
+#: Distributivity, Associativity and Absorption level 4
 msgid "Lets prove that $P ∧ (Q ∧ R)$ is equivalent to $(P ∧ Q) ∧ R$\n"
 msgstr ""
 
-#: Logical ands level 5
+#: Distributivity, Associativity and Absorption level 5
 msgid "Associative laws pt 2"
 msgstr ""
 
-#: Logical ands level 5
+#: Distributivity, Associativity and Absorption level 5
 msgid "Lets prove that $P ∨ (Q ∨ R)$ is equivalent to $(P ∨ Q) ∨ R$\n"
 msgstr ""
 
-#: Logical ands level 6 7
+#: Distributivity, Associativity and Absorption level 6 7
 msgid "Distributive laws 1"
 msgstr ""
 
-#: Logical ands level 6
+#: Distributivity, Associativity and Absorption level 6
 msgid "Lets prove that $P ∧ (Q ∨ R)$ is equivalent to $(P ∧ Q) ∨ (P ∧ R)$\n"
 msgstr ""
 
-#: Logical ands level 7
+#: Distributivity, Associativity and Absorption level 7
 msgid "Lets prove that $P ∨ (Q ∧ R)$ is equivalent to $(P ∨ Q) ∧ (P ∨ R)$\n"
 msgstr ""

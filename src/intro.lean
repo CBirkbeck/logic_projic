@@ -1,7 +1,7 @@
 /-
-# Captain de Morgan's logic Game
+# Captain De Morgan's logic Game
 
-## By UCL
+## By Chris Birkbeck and Niki Kalaydzhieva
 
 Learn some logic yo
 

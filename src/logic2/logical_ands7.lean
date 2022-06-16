@@ -5,7 +5,7 @@ import tactic --hide
 /-Lemma
 Lets prove that $P ∨ (Q ∧ R)$ is equivalent to $(P ∨ Q) ∧ (P ∨ R)$
 -/
-lemma distributivity_one (P Q R : Prop) : P ∨ (Q ∧ R) ↔ (P ∨ Q) ∧ (P ∨ R) :=
+lemma distributivity_two (P Q R : Prop) : P ∨ (Q ∧ R) ↔ (P ∨ Q) ∧ (P ∨ R) :=
 begin
   split,
   intro h,

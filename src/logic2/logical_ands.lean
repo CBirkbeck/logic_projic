@@ -96,6 +96,9 @@ hP : P
 hQ : Q
 ```
 
+You can also use it for "or's". Specifically, if you have `h : P ∨ Q` then `cases h` will
+give you two goals, one where `P` is true and one where `Q` is true.
+
 
 -/
 
@@ -127,6 +130,13 @@ begin
   exact hP,
 end
 
+example (P : Prop) (hp : P ∨ P) : P :=
+begin
+  cases hp,
+  exact hp,
+  exact hp,
+end
+
 
 /- Tactic : split
 
@@ -149,6 +159,8 @@ and
 ```
 ⊢ Q
 ```
+Moreover, if you have an iff `↔` then splitting it will give you two goals, `→` and `←` to prove.
+
 -/
 
 /- Tactic : left and right
@@ -182,5 +194,8 @@ will delete `hPaQ` and replace it with
 hP : P
 hQ : Q
 ```
+
+You can also use it for "or's". Specifically, if you have `h : P ∨ Q` then `cases h` will
+give you two goals, one where `P` is true and one where `Q` is true.
 
 -/

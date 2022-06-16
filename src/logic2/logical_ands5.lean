@@ -5,7 +5,7 @@ import tactic --hide
 /-Lemma
 Lets prove that $P ∨ (Q ∨ R)$ is equivalent to $(P ∨ Q) ∨ R$
 -/
-lemma associativity_one (P Q R : Prop) : P ∨ (Q ∨ R) ↔ (P ∨ Q) ∨ R :=
+lemma associativity_two (P Q R : Prop) : P ∨ (Q ∨ R) ↔ (P ∨ Q) ∨ R :=
 begin
   split,
   intro h,

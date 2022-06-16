@@ -1,4 +1,4 @@
-name = "Niki's Logic"
+name = "De Morgan's game"
 version = "1.0"
 extra_files = "extras"
 intro = "src/intro.lean"
@@ -34,7 +34,7 @@ levels = [  "src/logic_1/logic_lvl0.lean",
             ]
 
 [[worlds]]
-name = "Logical ands"
+name = "Distributivity, Associativity and Absorption"
 id = 3
 parents = [1, 2]
     levels = [  "src/logic2/logical_ands.lean",
