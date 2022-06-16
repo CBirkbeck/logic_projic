@@ -7,13 +7,30 @@ intro = "src/intro.lean"
 [[worlds]]
 name = "Tutorial"
 id = 1
-levels = [ "src/tutorial.lean" ]
+levels = [ "src/tutorial.lean",
+            "src/tut2.lean",
+            "src/tut3.lean",
+            "src/tut4.lean"
+             ]
 
 [[worlds]]
 name = "Logical statements"
 id = 2
 parents = [1]
-levels = [ "src/logic_pt1.lean",
-            "src/logic_pt2.lean", ]
+levels = [  "src/logic_1/logic_lvl0.lean",
+            "src/logic_1/logic_pt1.lean",
+            "src/logic_1/logic_pt2.lean", 
+            "src/logic_1/logic3.lean",
+            "src/logic_1/logic4.lean",
+            "src/logic_1/logic5.lean",
+            "src/logic_1/logic6.lean",
+            "src/logic_1/logic7.lean",
+            "src/logic_1/logic8.lean",
+            "src/logic_1/logic9.lean",
+            "src/logic_1/logic10.lean",
+            "src/logic_1/logic11.lean",
+            "src/logic_1/logic12.lean",
+            "src/logic_1/logic13.lean",
+            ]
 
 

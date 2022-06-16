@@ -13,8 +13,9 @@ Have fun!
 
 # Credits
 
-Some levels have been shamelessly borrowed from Kevin Buzzard's and Mohammad Pedramfar's "Natural Numbers Game" as well as 
-Kevin Buzzard's "Formalizing mathematics" course at Imperial College. 
+Some levels have been shamelessly borrowed from Kevin Buzzard's and Mohammad Pedramfar's 
+"Natural Numbers Game" as well as  Kevin Buzzard's "Formalizing mathematics" course at 
+Imperial College. 
 
 
 -/
