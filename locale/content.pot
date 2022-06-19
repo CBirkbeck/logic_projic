@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2022-06-16 12:06:49.918761\n"
+"POT-Creation-Date: 2022-06-17 13:05:07.276601\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 
@@ -690,45 +690,322 @@ msgid ""
 msgstr ""
 
 #: Distributivity, Associativity and Absorption level 2
-msgid "absorpsion laws pt 1"
+msgid "Lets start with something easy. Lets prove that $P ∧ Q$ iff $Q ∧ P$\n"
 msgstr ""
 
 #: Distributivity, Associativity and Absorption level 2
+msgid "Proving `∧` is symmetric\n"
+msgstr ""
+
+#: Distributivity, Associativity and Absorption level 3
+msgid "Ok lets mix things up a bit:\n"
+msgstr ""
+
+#: Distributivity, Associativity and Absorption level 3
+msgid ""
+"Lets prove that $P ∧ Q$ implies that $(P \\implies R) \\implies (Q \\implies "
+"R) \\implies R$ \n"
+msgstr ""
+
+#: Distributivity, Associativity and Absorption level 4
+msgid "Let now show that `∧` is transitive\n"
+msgstr ""
+
+#: Distributivity, Associativity and Absorption level 4
+msgid "Proving `∧` is transitive\n"
+msgstr ""
+
+#: Distributivity, Associativity and Absorption level 5
+msgid "absorpsion laws pt 1"
+msgstr ""
+
+#: Distributivity, Associativity and Absorption level 5
 msgid "Lets try and prove that $P ∧ (P ∨ Q)$ is equivalent to $P$\n"
 msgstr ""
 
-#: Distributivity, Associativity and Absorption level 3
+#: Distributivity, Associativity and Absorption level 6
 msgid "absorpsion laws pt 2"
 msgstr ""
 
-#: Distributivity, Associativity and Absorption level 3
+#: Distributivity, Associativity and Absorption level 6
 msgid "Lets try and prove that $P ∨ (P ∧ Q)$ is equivalent to $P$\n"
 msgstr ""
 
-#: Distributivity, Associativity and Absorption level 4
+#: Distributivity, Associativity and Absorption level 7
 msgid "Associative laws pt 1"
 msgstr ""
 
-#: Distributivity, Associativity and Absorption level 4
+#: Distributivity, Associativity and Absorption level 7
 msgid "Lets prove that $P ∧ (Q ∧ R)$ is equivalent to $(P ∧ Q) ∧ R$\n"
 msgstr ""
 
-#: Distributivity, Associativity and Absorption level 5
+#: Distributivity, Associativity and Absorption level 8
 msgid "Associative laws pt 2"
 msgstr ""
 
-#: Distributivity, Associativity and Absorption level 5
+#: Distributivity, Associativity and Absorption level 8
 msgid "Lets prove that $P ∨ (Q ∨ R)$ is equivalent to $(P ∨ Q) ∨ R$\n"
 msgstr ""
 
-#: Distributivity, Associativity and Absorption level 6 7
+#: Distributivity, Associativity and Absorption level 9 10
 msgid "Distributive laws 1"
 msgstr ""
 
-#: Distributivity, Associativity and Absorption level 6
+#: Distributivity, Associativity and Absorption level 9
 msgid "Lets prove that $P ∧ (Q ∨ R)$ is equivalent to $(P ∧ Q) ∨ (P ∧ R)$\n"
 msgstr ""
 
-#: Distributivity, Associativity and Absorption level 7
+#: Distributivity, Associativity and Absorption level 10
 msgid "Lets prove that $P ∨ (Q ∧ R)$ is equivalent to $(P ∨ Q) ∧ (P ∨ R)$\n"
+msgstr ""
+
+#: world_config
+msgid "Not logic"
+msgstr ""
+
+#: Not logic level 1
+msgid ""
+"There is a false proposition `false`, with no proof. It is\n"
+"easy to check that $\\lnot Q$ is equivalent to $Q\\implies {\\tt false}$. "
+"Lets call this\n"
+"\n"
+"`not_iff_imp_false (P : Prop) : ¬ P ↔ (P → false)`\n"
+"\n"
+msgstr ""
+
+#: Not logic level 1
+msgid ""
+"\n"
+"In order to use it, lets look at a new tactic.\n"
+"\n"
+"## The `rw` tactic\n"
+"\n"
+"The `rw` tactic or ``rewrite`` is a tactic that allows you to substitute in "
+"things. For example, if we have the\n"
+"assumption `h: P ↔ Q`, then `rw h` will replace the `P`'s in the goal with "
+"`Q`'s. If instead you would like to \n"
+"turn all of the `Q`'s in your goal to `P`'s then using `rw ←h` will do this. "
+"(To get the `←` arrow, type `\\l`)\n"
+"\n"
+"\n"
+"(This also works for equalities, but we won't see them in this game).\n"
+"\n"
+"\n"
+"Using `rw` and `not_iff_imp_false`, try to prove the following:\n"
+"\n"
+msgstr ""
+
+#: Not logic level 1
+msgid " Start by using `rw not_iff_imp_false,` and see what changes.\n"
+msgstr ""
+
+#: Not logic level 1
+msgid "using rw"
+msgstr ""
+
+#: Not logic level 1
+msgid ""
+"If $P$ and $Q$ are propositions, and $P\\implies Q$, then\n"
+"$\\lnot Q\\implies \\lnot P$. \n"
+msgstr ""
+
+#: Not logic level 1
+msgid ""
+"\n"
+"\n"
+msgstr ""
+
+#: Not logic level 1
+msgid ""
+"\n"
+"The `rw` tactic or ``rewrite`` is a tactic that allows you to substitute in "
+"things. For example, if we have the\n"
+"assumption `h: P ↔ Q`, then `rw h` will replace the `P`'s in the goal with "
+"`Q`'s. If instead you would like to \n"
+"turn all of the `Q`'s in your goal to `P`'s then using `rw ←h` will do this. "
+"(To get the `←` arrow, type `\\l`)\n"
+"\n"
+msgstr ""
+
+#: Not logic level 2
+msgid ""
+"##  `exfalso` and proof by contradiction. \n"
+"It's certainly true that $P\\land(\\lnot P)\\implies Q$ for any propositions "
+"$P$\n"
+"and $Q$, because the left hand side of the implication is false. But how do\n"
+"we prove that `false` implies any proposition $Q$? A cheap way of doing it "
+"in\n"
+"Lean is using the `exfalso` tactic, which changes any goal at all to "
+"`false`. \n"
+"You might think this is a step backwards, but if you have a hypothesis `h : "
+"¬ P`\n"
+"then after `rw not_iff_imp_false at h,` you can `apply h,` to make "
+"progress. \n"
+"Try solving this level using `exfalso.\n"
+msgstr ""
+
+#: Not logic level 2
+msgid ""
+"If $P$ and $Q$ are true/false statements, then\n"
+"$$(P\\land(\\lnot P))\\implies Q.$$\n"
+msgstr ""
+
+#: Not logic level 2
+msgid "This changes any goal to `false`.\n"
+msgstr ""
+
+#: Not logic level 3
+msgid ""
+"We proved earlier that `(P → Q) → (¬ Q → ¬ P)`. The converse,\n"
+"that `(¬ Q → ¬ P) → (P → Q)` is certainly true, but trying to prove\n"
+"it using what we've learnt so far is impossible (because it is not provable "
+"in\n"
+"constructive logic). For example, after\n"
+"```\n"
+"intro h,\n"
+"intro p,\n"
+"repeat {rw not_iff_imp_false at h},\n"
+"```\n"
+"in the below, you are left with\n"
+"```\n"
+"P Q : Prop,\n"
+"h : (Q → false) → P → false\n"
+"p : P\n"
+"⊢ Q\n"
+"```\n"
+"The tools you have are not sufficient to continue. But you can just\n"
+"prove this, and any other basic lemmas of this form like `¬ ¬ P → P`,\n"
+"using the `by_cases` tactic. Instead of starting with all the `intro`s,\n"
+"try this instead:\n"
+"`by_cases p : P; by_cases q : Q,`\n"
+"**Note the semicolon**! It means \"do the next tactic to all the goals, not "
+"just the top one\".\n"
+"After it, there are four goals, one for each of the four possibilities "
+"PQ=TT, TF, FT, FF.\n"
+"You can see that `p` is a proof of `P` in some of the goals, and a proof of "
+"`¬ P` in others.\n"
+"Similar comments apply to `q`. \n"
+"\n"
+"Note that using `by_cases` is the same as doing a truth table for the result "
+"you want to prove.\n"
+"\n"
+"You may also want to use some of the previous results we have used, for "
+"example the `contra` lemma we proved\n"
+"in the previous level. To use this try something like `apply contra P Q`. "
+"Alternatively, there is a tactic \n"
+"`contradiction` that will look at your assumptions and try and close the "
+"goal for you.\n"
+"\n"
+"\n"
+msgstr ""
+
+#: Not logic level 3
+msgid ""
+"Along with `by_cases p : P; by_cases q : Q,` you may also want to use `apply "
+"contra P false`\n"
+msgstr ""
+
+#: Not logic level 3
+msgid "Hint"
+msgstr ""
+
+#: Not logic level 3
+msgid ""
+"If $P$ and $Q$ are true/false statements, then\n"
+"$$(\\lnot Q\\implies \\lnot P)\\implies(P\\implies Q).$$ \n"
+msgstr ""
+
+#: Not logic level 3
+msgid ""
+"This approach assumed that `P ∨ ¬ P` was true; the `by_cases` tactic just "
+"does `cases` on\n"
+"this result. This is called the law of the excluded middle, and it cannot be "
+"proved just\n"
+"using tactics such as `intro` and `apply`.\n"
+msgstr ""
+
+#: Not logic level 3
+msgid ""
+"\n"
+"All propositional logic problems can in theory be solved by just throwing a "
+"truth table at them. \n"
+"The ``by_cases`` tactic is a simple truth table tactic: ``by_cases P`` turns "
+"one goal into two goals, \n"
+"with ``P`` is assumed in the first, and ``Â¬P`` in the second.\n"
+"\n"
+"Examples\n"
+"--------\n"
+"\n"
+"1) If ``P`` is a proposition, then ``by_cases P`` turns your goal into two "
+"goals, \n"
+"and in each of your new tactic states you have one extra hypothesis. \n"
+"In the first one you have a new hypothesis ``h : P`` and in the second you "
+"have a new hypothesis ``h : ¬P``.\n"
+"\n"
+"2) If you already have a hypothesis ``h`` then this can get a bit "
+"confusing, \n"
+"so you can also do ``by_cases hP : P``; then your new hypotheses will be "
+"``hP : P`` and ``hP : ¬P``.\n"
+msgstr ""
+
+#: world_config
+msgid "De Morgan's laws"
+msgstr ""
+
+#: De Morgan's laws level 1
+msgid "De Morgan's laws, First Boss"
+msgstr ""
+
+#: De Morgan's laws level 1
+msgid ""
+"Ok time to use everything we have leaned to prove the first of De Morgans "
+"laws.\n"
+"\n"
+msgstr ""
+
+#: De Morgan's laws level 1
+msgid ""
+"\n"
+"You can do this only using `split`, `intro`, `apply`, `left`, `right`.\n"
+"\n"
+msgstr ""
+
+#: De Morgan's laws level 1
+msgid "First hint"
+msgstr ""
+
+#: De Morgan's laws level 1
+msgid ""
+"\n"
+"Note that if you have a goal `¬P` then `intro h` will turn your goal into "
+"`false`.\n"
+"\n"
+msgstr ""
+
+#: De Morgan's laws level 1
+msgid "Second hint"
+msgstr ""
+
+#: De Morgan's laws level 1
+msgid ""
+"\n"
+"Note that if you have a goal `false` and an assumption `h : ¬P`, then `apply "
+"h` will turn your goal into `P`.\n"
+"\n"
+msgstr ""
+
+#: De Morgan's laws level 1
+msgid "Last hint"
+msgstr ""
+
+#: De Morgan's laws level 1
+msgid "Not $P$ or $Q$ is equivalent to $¬ P$ and $¬Q$.\n"
+msgstr ""
+
+#: De Morgan's laws level 2
+msgid "De Morgan's laws, Final Boss"
+msgstr ""
+
+#: De Morgan's laws level 2
+msgid "Not $P$ and $Q$ is equivalent to $¬ P$ or $¬Q$.\n"
 msgstr ""
