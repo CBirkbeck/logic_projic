@@ -24,7 +24,8 @@ Note that if you have a goal `¬P` then `intro h` will turn your goal into `fals
 
 /- Hint : Last hint
 
-Note that if you have a goal `false` and an assumption `h : ¬P`, then `apply h` will turn your goal into `P`.
+Note that if you have a goal `false` and an assumption `h : ¬P`, then `apply h` will turn your goal 
+into `P`.
 
 -/
 

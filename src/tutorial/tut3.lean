@@ -4,9 +4,9 @@ import tactic --hide
 
 #Combining logical statements
 
-Now, we can take these statements and create new ones. For example if we have two statements 
-`P Q : Prop` we can write ` P → Q` to mean $P$ implies $Q$. Similarly, we can write `¬P` for the 
-statement "Not $P$". 
+We can combine basic statements to create new ones. For example, we can write `¬P` for the 
+statement "Not $P$" and if we have two statements `P Q : Prop` we can write ` P → Q` to mean 
+$P$ implies $Q$. 
 
 Say we have the following lemma:
 
@@ -16,28 +16,29 @@ h : P → Q
 p : P
 ⊢ Q
 ```
-This asks us to prove: If $P$ implies $Q$ (which is written ` P → Q`) and we have a proof of $P$ 
-(i.e. we have `p : P`). Then $Q$ is true (i.e. we have a proof of `Q`). 
+As in level one, the first line says `P` and `Q` are logical statements and the third line says
+that `P` has a proof `p`.
 
-Here we have given the name $h$ to the implication ` P → Q`. We think of $h$ as a map between 
-statements in `Prop` world. 
+In the second line we have the implication `P → Q`, which we have called `h`. We think of `h` 
+as a one-way road from the statement `P` to the statement `Q` in `Prop` world. 
+In Maths, we would call `h` a function or a map. 
 
-Now this lemma is asking us to take a proof of $P$ and turn it into a proof of $Q$. Since we know 
-that $P$ implies $Q$ then we know that if $P$ is true then so is $Q$. So we can use our map in 
-`Prop` world to transform our proof of $P$ into a proof of $Q$. 
+Finally, our goal is to prove `Q` is true.
 
-If we write `exact h(p)` below we get what we want.
+Using `exact h(p),` will prove our lemma.
 
-Note that it has to be lower case $p$, since $P$ is the logical statement, but what we want to 
-transform is the proof.
+Why does this work? We know that `P` is true, since we have a proof of it `p` and `h` tells us that
+if `P` is true then `Q` is true. So combining `h` and `p` results in a proof of `Q`.
+
+**Note: We use `h(p)` rather than `h(P)`, because we want to transform the proof of `P` into 
+a proof of `Q`.**
 
 
 
 -/
 
 /- Lemma
-If $P$ implies $Q$ (which is written ` P → Q`) and we have a proof of $P$ (i.e. we have `p : P`). 
-Then $Q$ is true (i.e. we have a proof of `Q`)
+Let $P,Q$ be logical statements and $P$ implies $Q$. If $P$ is true, then so is $Q$.
 -/
 lemma implications_one (P Q : Prop) (h : P → Q) (p : P) : Q :=
 begin

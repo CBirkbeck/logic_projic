@@ -1,12 +1,11 @@
 import tactic --hide 
 
 /-Lemma
-Now try the following one:
+If $P,Q$ are logical statements with respective proofs $p,q$, then $Q$ is true.
 -/
-lemma example2 (P Q : Prop) (p : P) (q : Q) : Q :=
+lemma example_two (P Q : Prop) (p : P) (q : Q) : Q :=
 begin
   exact q,
 
 
 end
-
