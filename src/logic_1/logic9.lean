@@ -1,9 +1,9 @@
 import tactic --hide
 
-/-Lemma 
-More nested implications:
+/-Lemma
+More nested implications
 -/
-lemma lemma7 (P Q: Prop) : (P → Q) → ((P → Q) → P) → Q :=
+lemma lemma_7 (P Q: Prop) : (P → Q) → ((P → Q) → P) → Q :=
 begin
   intros hPQ hPQP,
   apply hPQ,

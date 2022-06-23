@@ -3,7 +3,7 @@ import tactic --hide
 /-Lemma
 This is getting silly now
 -/
-lemma lemma9 (P Q R : Prop) : ((Q → P) → P) → (Q → R) → (R → P) → P :=
+lemma lemma_9 (P Q R : Prop) : ((Q → P) → P) → (Q → R) → (R → P) → P :=
 begin
   intros h1 h2 h3,
   apply h1,

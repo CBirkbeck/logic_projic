@@ -2,8 +2,12 @@ import tactic --hide
 
 -- Level name : Associative laws pt 1
 
+/-
+Lets prove that $P ∧ (Q ∧ R)$ is equivalent to $(P ∧ Q) ∧ R$. We call this *associativity* of `∧`.
+-/
+
 /-Lemma
-Lets prove that $P ∧ (Q ∧ R)$ is equivalent to $(P ∧ Q) ∧ R$
+If $P,Q,R$ are logical statements, then $P ∧ (Q ∧ R)$ is true iff $(P ∧ Q) ∧ R$ is true.
 -/
 lemma associativity_one (P Q R : Prop) : P ∧ (Q ∧ R) ↔ (P ∧ Q) ∧ R :=
 begin

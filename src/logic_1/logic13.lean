@@ -2,7 +2,6 @@ import tactic --hide
 
 -- Level name : Boss fight 1
 
-
 /-Lemma
 Time for a boss fight!
 -/

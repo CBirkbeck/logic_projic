@@ -1,14 +1,14 @@
 import tactic --hide
 
 /-
-Lets try some harder ones
+Lets try some harder implication statements. 
 -/
 
 
 /-Lemma 
-This isn't so bad
+This is a long chain of implications.
 -/
-lemma lemma6 (P Q R S T : Prop) : (P → R) → (S → Q) → (R → T) → (Q → R) → S → T :=
+lemma lemma_6 (P Q R S T : Prop) : (P → R) → (S → Q) → (R → T) → (Q → R) → S → T :=
 begin
   intros hPR hSQ hRT hQR hS,
   apply hRT,

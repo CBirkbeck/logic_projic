@@ -2,8 +2,13 @@ import tactic --hide
 
 -- Level name : Distributive laws 1
 
+/-
+Lets prove that $P ∧ (Q ∨ R)$ is equivalent to $(P ∧ Q) ∨ (P ∧ R)$. We call this property of `∧` 
+and `∨`, *distributivity*. 
+-/
+
 /-Lemma
-Lets prove that $P ∧ (Q ∨ R)$ is equivalent to $(P ∧ Q) ∨ (P ∧ R)$
+If $P,Q,R$ are logical statements then $P ∧ (Q ∨ R)$ is true iff $(P ∧ Q) ∨ (P ∧ R)$ is true.
 -/
 lemma distributivity_one (P Q R : Prop) : P ∧ (Q ∨ R) ↔ (P ∧ Q) ∨ (P ∧ R) :=
 begin

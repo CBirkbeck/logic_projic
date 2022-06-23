@@ -1,13 +1,13 @@
 import tactic --hide
 
 /-
-Lets start with something easy. Lets prove that $P ∧ Q$ iff $Q ∧ P$
+This level proves that `∧` is a commutative operator. 
 -/
 
 /-Lemma
-Proving `∧` is symmetric
+Let $P,Q$ be logical statements, then $P ∧ Q$ is true iff $Q ∧ P$ is true.
 -/
-lemma and_symmetric (P Q : Prop) : P ∧ Q ↔ Q ∧ P :=
+lemma and_commutative (P Q : Prop) : P ∧ Q ↔ Q ∧ P :=
 begin
   split,
   intro h,

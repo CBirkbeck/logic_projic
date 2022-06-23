@@ -4,7 +4,7 @@ import tactic --hide
 
 /-
 Lets now look at making some more complicated logical statements. Recall that if we have two
-statements $P,Q$ then we can form $P ∧ Q$ which is true iff both $P$ and $Q$ are true.#check
+statements `P,Q` then we can form `P ∧ `$ which is true if and only if both `P` and `Q` are true.
 
 To help us with this, lets introduce some new tactics.
 
@@ -55,7 +55,8 @@ working on Q,
 ...
 ```
 
-Moreover, if you have an iff `↔` then splitting it will give you two goals, `→` and `←` to prove.
+Moreover, if you have an if and only if `↔` then splitting it will give you two goals,
+`→` and `←` to prove.
 
 ## `left` and `right`
 

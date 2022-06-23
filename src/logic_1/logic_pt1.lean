@@ -6,32 +6,43 @@ universe u --hide
 
 /-
 
+## The `intro` tactic.
+
+If your goal is 
+
+```
+⊢ P → Q
+```
+
+meaning we need to prove the `P` implies `Q` then the tactic <mark style ="background-color : #ebdef0 ">`intro hp,`</mark> 
+will take `P` as true with proof `hp` and add `hp : P` to the assumptions. In addition, 
+it turn your goal into `⊢ Q`. 
+
+In other words the state of the lemma becomes:  
+
+```
+hp : P
+⊢ Q
+```
+
 Lets look at an example that needs the `intro` tactic: 
 
-If your goal is to prove `P → Q` (i.e. that $P\implies Q$)
-then `intro p`, meaning "assume $p$ is a proof of $P$", will make progress.
-To solve the goal below, you have to come up with a function from
-`P` (thought of as the set of proofs of $P$!) to itself. Start with
-`intro p,`
-(i.e. "let $p$ be a proof of $P$") and note that our
-local context now looks like this:
-```
-P : Prop,
-p : P
-⊢ P
-```
-Our job now is to construct a proof of $P$. But $p$ is a proof of $P$.
-So
-`exact p,`
-will close the goal. Note that `exact P` will not work -- don't
-confuse a true/false statement (which could be false!) with a proof.
-We will stick with the convention of capital letters for propositions
-and small letters for proofs.
+
 -/ 
 
 
+/-Hint : Hint
+Start with `intro p`.
+-/
+
+/-Hint : Tip
+ `intros` can be used to introduce
+more than one assumption at once. Don't forget
+to name your hypotheses, e.g. `intros hp hq` if your goal is `P → Q → R`.
+-/
+
 /- Lemma : no-side-bar
-If $P$ is a proposition then $P\implies P$.
+If $P$ is a logical statement then $P\implies P$.
 -/
 lemma implies_self (P : Prop) : P → P :=
 begin
@@ -45,7 +56,7 @@ end
 
 ## The `intro` tactic.
 
-If your goal is
+If your goal is to prove the implication
 
 ```
 ⊢ P → Q
@@ -55,15 +66,16 @@ then the tactic
 
 `intro hP,`
 
-will turn your tactic state into
+will add `hp : P` as an assumption (i.e. `hp` is the proof of `P`) and turn your goal into `⊢ Q`. 
+In other words we get: 
 
 ```
 hP : P
 ⊢ Q
 ```
 
-Variant: `intros` can be used to introduce
+Tip : `intros` can be used to introduce
 more than one assumption at once. Don't forget
-to name your hypotheses, e.g. `intros hP hQ` if your goal is `P → Q → <something else>`.
+to name your hypotheses, e.g. `intros hP hQ` if your goal is `P → Q → R`.
 
 -/

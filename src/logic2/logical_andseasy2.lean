@@ -1,11 +1,8 @@
 import tactic --hide
 
-/-
-Ok lets mix things up a bit:
--/
-
 /-Lemma
-Lets prove that $P ∧ Q$ implies that $(P \implies R) \implies (Q \implies R) \implies R$ 
+If $P,Q,R$ are logical statements then $P ∧ Q$ implies that 
+$(P \implies R) \implies (Q \implies R) \implies R$ 
 -/
 lemma and_implication (P Q R : Prop) :  P ∨ Q → (P → R) → (Q → R) → R :=
 begin

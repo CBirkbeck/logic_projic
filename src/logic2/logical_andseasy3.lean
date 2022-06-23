@@ -1,11 +1,11 @@
 import tactic --hide
 
 /-
-Let now show that `∧` is transitive
+This level will show that `∧` is *transitive*.
 -/
 
 /-Lemma
-Proving `∧` is transitive
+If $P,Q,R$ are logical statements, then $P ∧ Q$ and $Q ∧ R$ imples $P ∧ R$.
 -/
 lemma and_transitive (P Q R: Prop) : (P ∧ Q) → (Q ∧ R) → (P ∧ R)  :=
 begin

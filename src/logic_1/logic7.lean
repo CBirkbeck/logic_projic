@@ -1,24 +1,29 @@
 import tactic --hide
 
+-- Level name : Boss level
 
-/-
-For the next one you might need to note the following:
+/- Hint : Hint 1
+ Notice we have three implications, so we need to introduce all of them using `intros`.
 
-If we have the assumption `h : P → Q → R` with goal `⊢ R` and you `apply h`, then you'll get
-two goals! 
-
-Note that tactics operate on only the first goal. So you'll have to first prove the 
-first goal and then move onto the second. 
-
-Tip:  If you have multiple goals and you want to work on one that isnt the first one you can 
-write `sorry,` to skip a proving a goal (although you will need to come back to it 
-eventually to complete the proof!)
 -/
+
+/-Hint : Hint 2
+When using `apply` we need to make sure that we use an assumption that contains our goal.
+
+-/
+
+/-Hint : Hint 3
+If we have more than one goal to prove, then we need to do them in order. By default the lean 
+applies the tactics to the first goal until complete and then moves on to the next.  
+
+-/
+
 
 /-Lemma 
-Prove $(P \implies Q \implies R) \implies ((P \implies Q) \implies (P \implies R)$
+If $P,Q,R$ are logical statements and
+ $(P \implies Q \implies R)$  then $((P \implies Q) \implies (P \implies R)$.
 -/
-lemma lemma5 (P Q R : Prop) : (P → Q → R) → (P → Q) → (P → R) :=
+lemma lemma_5 (P Q R : Prop) : (P → Q → R) → (P → Q) → (P → R) :=
 begin
   intros hPQR hPQ hP,
   apply hPQR,
@@ -29,3 +34,9 @@ begin
 
 
 end
+
+/- Hint : Tip
+To skip proving a goal you can  write `sorry,`. But don't forget to go back and prove it to solve the
+level.  
+
+-/
