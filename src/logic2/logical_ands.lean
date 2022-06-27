@@ -1,13 +1,12 @@
 import tactic --hide
 
--- Level name : and what?
+-- Level name : And's
 
 /-
 Lets now look at making some more complicated logical statements. Recall that if we have two
-statements `P,Q` then we can form `P ∧ `$ which is true if and only if both `P` and `Q` are true.
+statements `P,Q` then we can form `P ∧ Q` which is true if and only if both `P` and `Q` are true.
 
 To help us with this, lets introduce some new tactics.
-
 
 ## Tactics for Level 2
 

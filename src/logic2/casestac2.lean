@@ -2,7 +2,7 @@ import tactic --hide
 
 
 /-
-You can also use `cases` when working with the `∨` ("or") connective.For example, if you have
+You can also use `cases` when working with the `∨` ("or") connective. For example, if you have
 the assumption
 
 ```
@@ -25,7 +25,7 @@ hq : Q
 ```
 one where `P` is true and one where `Q` is true.
 
-Try this in the lemma below
+Try this in the lemma below.
 -/
 
 /- Lemma

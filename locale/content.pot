@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2022-06-23 16:27:48.883743\n"
+"POT-Creation-Date: 2022-06-24 17:27:57.740626\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 
@@ -183,11 +183,10 @@ msgid ""
 "that `P` has a proof `p`.\n"
 "\n"
 "In the second line we have the implication <mark style =\"background-"
-"color :  #ebdef0 \">`P → Q`</mark>, which we have called `h`. We think of "
-"`h` \n"
-"as a one-way road from the statement `P` to the statement `Q` in `Prop` "
-"world. \n"
-"In Maths, we would call `h` a function or a map. \n"
+"color :  #ebdef0 \">`P → Q`</mark>, \n"
+"which we have called `h`. We think of `h`  as a one-way road from the "
+"statement `P` to the \n"
+"statement `Q` in `Prop`. In Maths, we would call `h` a function or a map. \n"
 "\n"
 "Finally, our goal is to prove `Q` is true.\n"
 "\n"
@@ -328,7 +327,7 @@ msgstr ""
 msgid "Start with `intro p`.\n"
 msgstr ""
 
-#: Logical statements level 2 6 Not logic 3
+#: Logical statements level 2 6 Not logic 1 3 5
 msgid "Hint"
 msgstr ""
 
@@ -497,39 +496,69 @@ msgid ""
 msgstr ""
 
 #: world_config
-msgid "Bonus logical statements"
+msgid "True and False"
 msgstr ""
 
-#: Bonus logical statements level 1
-msgid "Lets try some harder implication statements. \n"
+#: True and False level 1
+msgid ""
+"##  True and False\n"
+"\n"
+" `Prop` has two special inhabitants, the logical statements <mark style ="
+"\"background-color : #ebdef0 \">`true`</mark>,\n"
+"with truth value true and <mark style =\"background-color : #ebdef0 "
+"\">`false`</mark> with truth value\n"
+"false.\n"
+"\n"
+"\n"
+"In the following levels we will work with logical statements combining "
+"`true` and `false`.\n"
+"\n"
+"To help us we need to introduce a new tactic:\n"
+"\n"
+"## The `triv` tactic\n"
+"\n"
+"If your lemma has the goal: \n"
+"\n"
+"```\n"
+"⊢ true\n"
+"```\n"
+"\n"
+"then <mark style =\"background-color : #ebdef0 \">`triv`</mark> will "
+"complete the proof for you. Try it out below:\n"
+"\n"
 msgstr ""
 
-#: Bonus logical statements level 1
-msgid "This is a long chain of implications.\n"
+#: True and False level 1
+msgid "The logical statement `true` is true.\n"
 msgstr ""
 
-#: Bonus logical statements level 2
-msgid "More nested implications\n"
+#: True and False level 1
+msgid ""
+"\n"
+"If your lemma has the goal: \n"
+"\n"
+"```\n"
+"⊢ true\n"
+"```\n"
+"then `triv` will complete the proof for you.\n"
+"\n"
 msgstr ""
 
-#: Bonus logical statements level 3
-msgid "Even more nested implications\n"
+#: True and False level 2
+msgid "True implies true.\n"
 msgstr ""
 
-#: Bonus logical statements level 4
-msgid "This is getting silly now\n"
+#: True and False level 3
+msgid "False implies true.\n"
 msgstr ""
 
-#: Bonus logical statements level 5
-msgid "How hard could it be?\n"
+#: True and False level 4
+msgid "False implies false.\n"
 msgstr ""
 
-#: Bonus logical statements level 6
-msgid "Boss fight 1"
-msgstr ""
-
-#: Bonus logical statements level 6
-msgid "Time for a boss fight!\n"
+#: True and False level 5
+msgid ""
+"$(\\mathrm{true} \\implies \\mathrm{false}) \\implies \\mathrm{false}$.\n"
 msgstr ""
 
 #: world_config
@@ -634,22 +663,22 @@ msgid ""
 "the goal to `⊢ P`. \n"
 "Similarly,  <mark style =\"background-color : #ebdef0 \">`right`</mark>  "
 "changes the goal to `⊢ Q`.\n"
-"\n"
 msgstr ""
 
 #: And & Or level 3
 msgid ""
-" The logic is that `P` implies `P ∨ Q` so it is enough to prove `P`. \n"
-" -/\n"
+"The logic is that `P` implies `P ∨ Q` so it is enough to prove `P`. \n"
 "\n"
-"\n"
-"/-Lemma\n"
-"Let $P,Q$ be logical statements and assume $P$ is true, then $P ∨ Q$ is "
-"true.\n"
 msgstr ""
 
 #: And & Or level 3
 msgid "Why does this work?"
+msgstr ""
+
+#: And & Or level 3
+msgid ""
+"Let $P,Q$ be logical statements and assume $P$ is true, then $P ∨ Q$ is "
+"true.\n"
 msgstr ""
 
 #: And & Or level 3
@@ -734,7 +763,7 @@ msgstr ""
 
 #: And & Or level 5
 msgid ""
-"You can also use `cases` when working with the `∨` (\"or\") connective.For "
+"You can also use `cases` when working with the `∨` (\"or\") connective. For "
 "example, if you have\n"
 "the assumption\n"
 "\n"
@@ -759,7 +788,7 @@ msgid ""
 "```\n"
 "one where `P` is true and one where `Q` is true.\n"
 "\n"
-"Try this in the lemma below\n"
+"Try this in the lemma below.\n"
 msgstr ""
 
 #: And & Or level 5
@@ -897,7 +926,7 @@ msgid ""
 "\n"
 "## The `rw` tactic\n"
 "\n"
-"The `rw` tactic or ``rewrite`` is a tactic that allows you to substitute in "
+"The `rw` tactic or `rewrite` is a tactic that allows you to substitute in "
 "things. For example, if we have the\n"
 "assumption `h: P ↔ Q`, then `rw h` will replace the `P`'s in the goal with "
 "`Q`'s. If instead you would like to \n"
@@ -908,16 +937,12 @@ msgid ""
 "(This also works for equalities, but we won't see them in this game).\n"
 "\n"
 "\n"
-"Using `rw` and `not_iff_imp_false`, try to prove the following:\n"
+"Combining `rw` and `not_iff_imp_false`, try to prove the following:\n"
 "\n"
 msgstr ""
 
 #: Not logic level 1
 msgid " Start by using `rw not_iff_imp_false,` and see what changes.\n"
-msgstr ""
-
-#: Not logic level 1
-msgid "using rw"
 msgstr ""
 
 #: Not logic level 1
@@ -1061,6 +1086,24 @@ msgid ""
 "``hP : P`` and ``hP : ¬P``.\n"
 msgstr ""
 
+#: Not logic level 4
+msgid ""
+"If $P$ is a logical statement then $P \\implies ¬P$ implies $"
+"\\mathrm{false}$.\n"
+msgstr ""
+
+#: Not logic level 5
+msgid "You might need to at somepoint use `rw not_iff_imp_false,`.\n"
+msgstr ""
+
+#: Not logic level 5
+msgid "If $P$ is a logical statement then $P \\implies ¬ ¬P$.\n"
+msgstr ""
+
+#: Not logic level 6
+msgid "If $P$ is a logical statement then $¬ ¬ P \\implies P$.\n"
+msgstr ""
+
 #: world_config
 msgid "De Morgan's laws"
 msgstr ""
@@ -1122,4 +1165,100 @@ msgstr ""
 
 #: De Morgan's laws level 2
 msgid "Not $P$ and $Q$ is equivalent to $¬ P$ or $¬Q$.\n"
+msgstr ""
+
+#: world_config
+msgid "Advanced true and false"
+msgstr ""
+
+#: Advanced true and false level 1
+msgid "$¬ \\mathrm{false}$ implies $\\mathrm{true}$.\n"
+msgstr ""
+
+#: Advanced true and false level 2
+msgid "$¬ \\mathrm{true}$ implies $\\mathrm{false}$.\n"
+msgstr ""
+
+#: Advanced true and false level 3
+msgid "If $P$ is a logical statement then $\\mathrm{false}$ implies $P$.\n"
+msgstr ""
+
+#: Advanced true and false level 4
+msgid ""
+"If $P$ is a logical statement then $P$ implies $(P \\implies "
+"\\mathrm{false}) \\implies \\mathrm{false}$\n"
+msgstr ""
+
+#: Advanced true and false level 5
+msgid ""
+"If $P, Q$ are logical statements then $P \\implies \\mathrm{false}$ implies "
+"$P \\implies Q$. \n"
+msgstr ""
+
+#: Advanced true and false level 6
+msgid ""
+"For any logical statement $P$, $(\\mathrm{true} \\implies \\mathrm{false})$ "
+"implies $P$. \n"
+msgstr ""
+
+#: world_config
+msgid "Bonus content"
+msgstr ""
+
+#: Bonus content level 1
+msgid "Lets try some harder implication statements. \n"
+msgstr ""
+
+#: Bonus content level 1
+msgid "This is a long chain of implications.\n"
+msgstr ""
+
+#: Bonus content level 2
+msgid "More nested implications\n"
+msgstr ""
+
+#: Bonus content level 3
+msgid "Even more nested implications\n"
+msgstr ""
+
+#: Bonus content level 4
+msgid "This is getting silly now\n"
+msgstr ""
+
+#: Bonus content level 5
+msgid "How hard could it be?\n"
+msgstr ""
+
+#: Bonus content level 6
+msgid "Boss fight"
+msgstr ""
+
+#: Bonus content level 6
+msgid "Time for a boss fight!\n"
+msgstr ""
+
+#: Bonus content level 7
+msgid "Super Boss"
+msgstr ""
+
+#: Bonus content level 7
+msgid "Now go against the super boss.\n"
+msgstr ""
+
+#: Bonus content level 7
+msgid ""
+"Lets prove that $(P \\implies Q) ∧ (Q \\implies R)$ is equivalent to \n"
+"  $(P \\implies R) ∧ ((P ↔ Q) ∨ (R ↔ Q))$\n"
+msgstr ""
+
+#: Bonus content level 7
+msgid ""
+"Lean has more advanced tactics that can solve all of the levels very "
+"quickly. For example,\n"
+"using the `tauto!` tactic should allow you to solve the whole game! (but "
+"what's the fun in that?)\n"
+msgstr ""
+
+#: Bonus content level 7
+msgid "Cheat code"
 msgstr ""

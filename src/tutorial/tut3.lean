@@ -19,9 +19,9 @@ p : P
 As in level one, the first line says `P` and `Q` are logical statements and the third line says
 that `P` has a proof `p`.
 
-In the second line we have the implication <mark style ="background-color :  #ebdef0 ">`P → Q`</mark>, which we have called `h`. We think of `h` 
-as a one-way road from the statement `P` to the statement `Q` in `Prop` world. 
-In Maths, we would call `h` a function or a map. 
+In the second line we have the implication <mark style ="background-color :  #ebdef0 ">`P → Q`</mark>, 
+which we have called `h`. We think of `h`  as a one-way road from the statement `P` to the 
+statement `Q` in `Prop`. In Maths, we would call `h` a function or a map. 
 
 Finally, our goal is to prove `Q` is true.
 

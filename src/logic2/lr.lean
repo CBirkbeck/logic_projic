@@ -11,12 +11,12 @@ If your lemma has the goal:
 
 then   <mark style ="background-color : #ebdef0 ">`left`</mark>  changes the goal to `⊢ P`. 
 Similarly,  <mark style ="background-color : #ebdef0 ">`right`</mark>  changes the goal to `⊢ Q`.
-
 -/
 
 /-Hint : Why does this work?
- The logic is that `P` implies `P ∨ Q` so it is enough to prove `P`. 
- -/
+The logic is that `P` implies `P ∨ Q` so it is enough to prove `P`. 
+
+-/
 
 
 /-Lemma
