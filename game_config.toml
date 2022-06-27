@@ -71,6 +71,7 @@ name = "Not logic"
 id = 6
 parents = [4]
     levels = [  "src/logic3/notlogic.lean",
+                "src/true_false/tf6.lean",
                 "src/logic3/notlogic1.lean",
                  "src/logic3/notlogic2.lean",
                   "src/logic3/notlogicb.lean",
@@ -92,7 +93,6 @@ id = 8
 parents = [6]
     levels = [  "src/logic3/nottf2.lean",
                 "src/logic3/nottf.lean",
-                "src/true_false/tf6.lean",
                 "src/true_false/tf8.lean",
                 "src/true_false/tf9.lean",
                 "src/true_false/tf10.lean",

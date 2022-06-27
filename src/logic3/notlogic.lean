@@ -3,22 +3,27 @@
 -/
 
 /-
-By definition $\lnot Q$ is equivalent to $Q\implies {\tt false}$. Lets call this result
+
+
+By definition `¬Q` is equivalent to `Q → false`. Lets call this result
 
 `not_iff_imp_false (P : Prop) : ¬ P ↔ (P → false)`
 
 -/
-lemma not_iff_imp_false (P : Prop) : ¬ P ↔ P → false := iff.rfl -- hide
+lemma not_iff_imp_false (P : Prop) : ¬ P ↔ P → false :=iff.rfl-- hide
 /-
+
+You can convince yourself this is true by writting out the truth table for `¬ P` and `P → false`.
+
 
 In order to use it, lets look at a new tactic.
 
 ## The `rw` tactic
 
-The  <mark style ="background-color : #ebdef0 ">`rw`</mark>  tactic (short for `rewrite`) is a tactic 
-that allows you to substitute in things. For example, if we have the
-assumption `h : P ↔ Q`, then `rw h` will replace the `P`'s in the goal with `Q`'s. If instead you would like to 
-turn all of the `Q`'s in your goal to `P`'s then using `rw ←h` will do this. (To get the `←` arrow, type `\l`).
+The <mark style ="background-color : #ebdef0 ">`rw`</mark> tactic (short for <mark style ="background-color : #ebdef0 ">`rewrite`</mark>) 
+is a tactic that allows you to do a substitution. For example, if we have the
+assumption `h : P ↔ Q`, then `rw h` will replace the (first) `P` in the goal with `Q`. If instead you would like to 
+turn the first `Q` in your goal to `P` then use `rw ←h`. (To get the `←` arrow, type `\l`).
 
 Combining `rw` and `not_iff_imp_false`, try to prove the following:
 
@@ -48,8 +53,10 @@ begin
 end
 
 /-Hint : Tip
-If you want to use the `rw` tactic at one of your assumptions then you can type `rw h1 at h2`. 
-If, for example, we had `h1 : P ↔ Q` then this would change all the `P`'s in the assumption `h2` to `Q`'s.   
+If you want to use the `rw` tactic on one of your assumptions then this can be done.
+
+For example, if we have `h1 : P ↔ Q` and `h2` is the assumption we want to change, then
+ `rw h1 at h2` will substitute the first `P` in `h2` to `Q`. 
 
 -/
 
@@ -60,7 +67,7 @@ The `rw` tactic is a tactic that allows you to substitute in things. For example
 assumption `h: P ↔ Q`, then `rw h` will replace the `P`'s in the goal with `Q`'s. If instead you would like to 
 turn all of the `Q`'s in your goal to `P`'s then using `rw ←h` will do this. (To get the `←` arrow, type `\l`).
 
-If you want to use the `rw` tactic at one of your assumptions then you can type `rw h1 at h2`. 
-If we had `h1 : P ↔ Q` then this would change all the `P`'s in the assumption `h2` to `Q`'s.
+Moreover, if we have `h1 : P ↔ Q` and `h2` is the assumption we want to change, then
+ `rw h1 at h2` will substitute the first `P` in `h2` to `Q`. 
 
 -/

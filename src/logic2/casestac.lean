@@ -5,8 +5,8 @@ import tactic --hide
 
 `cases` is a very general-purpose tactic for "deconstructing" hypotheses.
 If `h` is an assumption which somehow "bundles up" two pieces of information,
-then  <mark style ="background-color : #ebdef0 ">`cases h with h1 h2`</mark>  will make the assumption `h` vanish and will replace it
-with the two "components" which made the proof of `h` in the first place.
+then  <mark style ="background-color : #ebdef0 ">`cases h with h1 h2`</mark>  will make the 
+assumption `h` vanish and will replace it with the two "components" which made the proof of `h` in the first place.
 An example of this occurring is if you have the assumption `h : P ∧ Q` which contains a 
 proof of `P` and a proof of `Q`.
 

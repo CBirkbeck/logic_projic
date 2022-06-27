@@ -8,7 +8,7 @@ Now go against the super boss.
 
 /-Lemma
 Lets prove that $(P \implies Q) ∧ (Q \implies R)$ is equivalent to 
-  $(P \implies R) ∧ ((P ↔ Q) ∨ (R ↔ Q))$
+  $(P \implies R) ∧ ((P \iff Q) ∨ (R \iff Q))$
 -/
 lemma and_impl_equiv (P Q R : Prop) : (P  → Q) ∧ (Q → R) ↔ (P → R) ∧ ((P ↔ Q) ∨ (R ↔ Q)) :=
 begin

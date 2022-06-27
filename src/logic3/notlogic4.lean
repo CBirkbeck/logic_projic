@@ -7,7 +7,7 @@ lemma contra (P Q : Prop) : (P ∧ ¬ P) → Q := by {cc} --hide
 -- Level name : De Morgan's laws, Final Boss
 
 /-Lemma
-Not $P$ and $Q$ is equivalent to $¬ P$ or $¬Q$.
+If $P,Q$ are logical statements then $¬(P ∧ Q)$ is equivalent to $¬ P ∨ ¬Q$.
 -/
 
 lemma DeMorgan_two (P Q : Prop) :  ¬ (P ∧ Q) ↔ ¬ P ∨ ¬ Q :=

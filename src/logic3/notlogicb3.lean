@@ -4,7 +4,7 @@ lemma contra (P Q : Prop) : (P ∧ ¬ P) → Q := by {cc} --hide
 
 
 /-Lemma
-If $P$ is a logical statement then $¬ ¬ P \implies P$.
+If $P$ is a logical statement then $¬(¬P) \implies P$.
 -/
 lemma not_not_P_imp_P (P : Prop) :¬ (¬ P) → P :=
 begin

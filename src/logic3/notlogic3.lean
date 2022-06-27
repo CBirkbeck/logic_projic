@@ -30,7 +30,7 @@ into `P`.
 -/
 
 /-Lemma
-Not $P$ or $Q$ is equivalent to $¬ P$ and $¬Q$.
+If $P,Q$ are logical statements  $¬(P ∨ Q)$ is equivalent to $¬ P ∧ ¬Q$.
 -/
 
 lemma DeMorgan_one (P Q : Prop) : ¬ (P ∨ Q) ↔ ¬ P ∧ ¬ Q :=

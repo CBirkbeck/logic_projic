@@ -4,15 +4,13 @@ import tactic --hide
 lemma not_iff_imp_false (P : Prop) : ¬ P ↔ P → false := iff.rfl -- hide
 
 /-
-##  `exfalso` and proof by contradiction. 
-It's certainly true that $P\land(\lnot P)\implies Q$ for any propositions $P$
-and $Q$, because the left hand side of the implication is false.
+##  Proof by contradiction. 
 
-But how do we prove that `false` implies any proposition `Q`? An easy way of doing it in
-Lean is using the `exfalso` tactic, which changes any goal at all to `false`. 
-You might think this is a step backwards, but if you have a hypothesis `h : ¬ P`
-then after using `rw not_iff_imp_false at h,` you can `apply h,` to make progress. 
-Try solving this level using `exfalso.
+In this level we want to prove that ` P ∧ (¬ P) → Q` is true for any propositions `P`
+and `Q`. One way to see that this is true is to note that left hand side is `false` and in the 
+previous level we saw that `false → Q` is always true.
+
+Try solving this level using the `exfalso` tactic from the previous level.
 -/
 
 /- Lemma 
@@ -38,6 +36,3 @@ the assumptions you want to use. You can also use the tactics `by_contra` and
 
 -/
 
-/-Tactic : exofalso
-This changes any goal to `false`.
--/

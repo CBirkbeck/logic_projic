@@ -5,8 +5,8 @@ import tactic --hide
 #Combining logical statements
 
 We can combine basic statements to create new ones. For example, we can write `¬P` for the 
-statement "Not `P`" and if we have two statements <mark style ="background-color : #ebdef0 ">`P Q : Prop`</mark> 
-we can write <mark style ="background-color :  #ebdef0 ">`P → Q`</mark> to mean `P` implies `Q`. 
+statement "Not `P`" and if we have two statements `P Q : Prop` 
+we can write `P → Q` to mean `P` implies `Q`. 
 
 Say we have the following state of our lemma:
 
@@ -19,7 +19,7 @@ p : P
 As in level one, the first line says `P` and `Q` are logical statements and the third line says
 that `P` has a proof `p`.
 
-In the second line we have the implication <mark style ="background-color :  #ebdef0 ">`P → Q`</mark>, 
+In the second line we have the implication `P → Q`, 
 which we have called `h`. We think of `h`  as a one-way road from the statement `P` to the 
 statement `Q` in `Prop`. In Maths, we would call `h` a function or a map. 
 

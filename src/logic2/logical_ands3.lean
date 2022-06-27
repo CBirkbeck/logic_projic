@@ -3,7 +3,7 @@ import tactic --hide
 -- Level name : absorpsion laws pt 2
 
 /-
-Lets try and prove that $P ∨ (P ∧ Q)$ is equivalent to $P$
+Lets try and prove that `P ∨ (P ∧ Q)` is equivalent to `P`.
 -/
 
 /-Lemma
