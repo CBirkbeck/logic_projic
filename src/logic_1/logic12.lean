@@ -1,7 +1,7 @@
 import tactic --hide
 
 /-Lemma
-How hard could it be?
+Are we there yet?
 -/
 lemma lemma_10 (P Q : Prop) : (((P → Q) → Q) → Q) → (P → Q) :=
 begin

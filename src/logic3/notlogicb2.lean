@@ -3,7 +3,7 @@ lemma not_iff_imp_false (P : Prop) : ¬ P ↔ P → false := iff.rfl -- hide
 
 
 /-Hint : Hint
-You might need to at somepoint use `rw not_iff_imp_false,`.
+Try using `rw not_iff_imp_false,`.
 -/
 
 /-Lemma

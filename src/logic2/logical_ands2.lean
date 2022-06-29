@@ -1,9 +1,9 @@
 import tactic --hide
 
--- Level name : absorpsion laws pt 1
+-- Level name : absorption laws pt 1
 
 /-
-Lets try and prove that `P ∧ (P ∨ Q)` is equivalent to `P`.
+This level proves the first *absorption* law.
 -/
 
 /-Lemma

@@ -39,23 +39,28 @@ In order to continue we need a new tactic.
 
 ## The `by_cases` tactic
 
-Instead of starting with all the `intro`s, try this instead: <mark style ="background-color : #ebdef0 ">`by_cases hp : P; by_cases hq : Q,`</mark>
+The tactic <mark style ="background-color : #ebdef0 ">`by_cases`</mark> allows us to create Lean's 
+version of a truth table.
 
+For example, if you have `P Q : Prop`, then <mark style ="background-color : #ebdef0 ">`by_cases hp : P; by_cases hq : Q,`</mark>
+will create four goals, one for each of the four  possibilities for `P,Q`, i.e., 
+
+```md
+| `P`     | `Q`     |
+| --------|---------|
+| `true`  | `true`  | 
+| `true`  | `false` |   
+| `false` | `true`  |   
+| `false` | `false` |   
+```
 
 **Note the semicolon**! It means "do the next tactic to all the goals, not just the first".
-After doing this in the lemma below, you will see there are four goals, one for each of the four 
-possibilities for `P,Q`, i.e., `P Q = true true`, `true false`, `false true`, `false false`.
-You can see that `hp` is a proof of `P` in some of the goals, and a proof of `¬ P` in others.
-Similarly with `hq`. 
-
-Note that using `by_cases` is Lean's version of a truth table, where each row of a truth table corresponds
-to a new goal.
 
 -/
 
 
 /- Lemma :
-If $P$ and $Q$ are true/false statements, then
+If $P$ and $Q$ are logical statements, then
 $(\lnot Q\implies \lnot P)\implies(P\implies Q).$
 -/
 lemma contrapositive_2 (P Q : Prop) : (¬ Q → ¬ P) → (P → Q) :=
@@ -84,10 +89,10 @@ begin
 
 end
 
-/-Hint : Why does this work?
-This approach assumed that `P ∨ ¬ P` was true; then `by_cases` tactic just does `cases` on
-this result. `P ∨ ¬ P` being true is called the law of the excluded middle, and it cannot be proved just
-using tactics such as `intro` and `apply`.
+/-Hint : +1 Intelligence
+The `by_cases` tactic works by adding the assumption `P ∨ ¬ P` and then doing `cases` on this.
+The fact that `P ∨ ¬ P` is true is called the *law of the excluded middle*, and it cannot be proven 
+by just using tactics such as `intro` and `apply`.
 -/
 
 /-Tactic : by_cases

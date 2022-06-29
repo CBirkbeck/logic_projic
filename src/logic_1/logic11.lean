@@ -1,7 +1,7 @@
 import tactic --hide
 
 /-Lemma
-This is getting silly now
+This is getting silly now!
 -/
 lemma lemma_9 (P Q R : Prop) : ((Q → P) → P) → (Q → R) → (R → P) → P :=
 begin

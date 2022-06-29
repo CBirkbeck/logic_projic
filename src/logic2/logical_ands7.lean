@@ -2,6 +2,10 @@ import tactic --hide
 
 -- Level name : Distributive laws 2
 
+/-
+This level proves the distributivity of `∨` over `∧`.
+-/
+
 /-Lemma
 If $P,Q,R$ are logical statements then $P ∨ (Q ∧ R)$ is true iff $(P ∨ Q) ∧ (P ∨ R)$ is true.
 -/

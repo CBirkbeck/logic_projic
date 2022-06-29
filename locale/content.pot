@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2022-06-29 12:17:37.050338\n"
+"POT-Creation-Date: 2022-06-29 18:32:23.758017\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 
@@ -670,7 +670,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: And & Or level 3 Not logic 5
+#: And & Or level 3
 msgid "Why does this work?"
 msgstr ""
 
@@ -825,11 +825,11 @@ msgid "Logic laws"
 msgstr ""
 
 #: Logic laws level 1
-msgid "absorpsion laws pt 1"
+msgid "absorption laws pt 1"
 msgstr ""
 
 #: Logic laws level 1
-msgid "Lets try and prove that `P ∧ (P ∨ Q)` is equivalent to `P`.\n"
+msgid "This level proves the first *absorption* law.\n"
 msgstr ""
 
 #: Logic laws level 1
@@ -843,7 +843,7 @@ msgid "absorpsion laws pt 2"
 msgstr ""
 
 #: Logic laws level 2
-msgid "Lets try and prove that `P ∨ (P ∧ Q)` is equivalent to `P`.\n"
+msgid "This level proves the second absorption law.\n"
 msgstr ""
 
 #: Logic laws level 2
@@ -857,9 +857,7 @@ msgid "Associative laws pt 1"
 msgstr ""
 
 #: Logic laws level 3
-msgid ""
-"Lets prove that `P ∧ (Q ∧ R)` is equivalent to `(P ∧ Q) ∧ R`. We call this "
-"*associativity* of `∧`.\n"
+msgid "This level proves that `∧` is *associative*.\n"
 msgstr ""
 
 #: Logic laws level 3
@@ -873,7 +871,7 @@ msgid "Associative laws pt 2"
 msgstr ""
 
 #: Logic laws level 4
-msgid "Lets prove that `∨` is also associative.\n"
+msgid "This level proves that `∨` is associative.\n"
 msgstr ""
 
 #: Logic laws level 4
@@ -887,9 +885,7 @@ msgid "Distributive laws 1"
 msgstr ""
 
 #: Logic laws level 5
-msgid ""
-"Lets prove that `P ∧ (Q ∨ R)` is equivalent to `(P ∧ Q) ∨ (P ∧ R)`. We call "
-"this property *distributivity*. \n"
+msgid "This level proves the *distributivity* of `∧` over `∨`.\n"
 msgstr ""
 
 #: Logic laws level 5
@@ -900,6 +896,10 @@ msgstr ""
 
 #: Logic laws level 6
 msgid "Distributive laws 2"
+msgstr ""
+
+#: Logic laws level 6
+msgid "This level proves the distributivity of `∨` over `∧`.\n"
 msgstr ""
 
 #: Logic laws level 6
@@ -1127,39 +1127,46 @@ msgid ""
 "\n"
 "## The `by_cases` tactic\n"
 "\n"
-"Instead of starting with all the `intro`s, try this instead: <mark style ="
-"\"background-color : #ebdef0 \">`by_cases hp : P; by_cases hq : Q,`</mark>\n"
+"The tactic <mark style =\"background-color : #ebdef0 \">`by_cases`</mark> "
+"allows us to create Lean's \n"
+"version of a truth table.\n"
 "\n"
+"For example, if you have `P Q : Prop`, then <mark style =\"background-"
+"color : #ebdef0 \">`by_cases hp : P; by_cases hq : Q,`</mark>\n"
+"will create four goals, one for each of the four  possibilities for `P,Q`, i."
+"e., \n"
+"\n"
+"```md\n"
+"| `P`     | `Q`     |\n"
+"| --------|---------|\n"
+"| `true`  | `true`  | \n"
+"| `true`  | `false` |   \n"
+"| `false` | `true`  |   \n"
+"| `false` | `false` |   \n"
+"```\n"
 "\n"
 "**Note the semicolon**! It means \"do the next tactic to all the goals, not "
 "just the first\".\n"
-"After doing this in the lemma below, you will see there are four goals, one "
-"for each of the four \n"
-"possibilities for `P,Q`, i.e., `P Q = true true`, `true false`, `false "
-"true`, `false false`.\n"
-"You can see that `hp` is a proof of `P` in some of the goals, and a proof of "
-"`¬ P` in others.\n"
-"Similarly with `hq`. \n"
-"\n"
-"Note that using `by_cases` is Lean's version of a truth table, where each "
-"row of a truth table corresponds\n"
-"to a new goal.\n"
 "\n"
 msgstr ""
 
 #: Not logic level 5
 msgid ""
-"If $P$ and $Q$ are true/false statements, then\n"
+"If $P$ and $Q$ are logical statements, then\n"
 "$(\\lnot Q\\implies \\lnot P)\\implies(P\\implies Q).$\n"
 msgstr ""
 
 #: Not logic level 5
 msgid ""
-"This approach assumed that `P ∨ ¬ P` was true; then `by_cases` tactic just "
-"does `cases` on\n"
-"this result. `P ∨ ¬ P` being true is called the law of the excluded middle, "
-"and it cannot be proved just\n"
-"using tactics such as `intro` and `apply`.\n"
+"The `by_cases` tactic works by adding the assumption `P ∨ ¬ P` and then "
+"doing `cases` on this.\n"
+"The fact that `P ∨ ¬ P` is true is called the *law of the excluded middle*, "
+"and it cannot be proven \n"
+"by just using tactics such as `intro` and `apply`.\n"
+msgstr ""
+
+#: Not logic level 5
+msgid "+1 Intelligence"
 msgstr ""
 
 #: Not logic level 5
@@ -1191,7 +1198,7 @@ msgid ""
 msgstr ""
 
 #: Not logic level 7
-msgid "You might need to at somepoint use `rw not_iff_imp_false,`.\n"
+msgid "Try using `rw not_iff_imp_false,`.\n"
 msgstr ""
 
 #: Not logic level 7
@@ -1218,8 +1225,8 @@ msgstr ""
 
 #: De Morgan's laws level 1
 msgid ""
-"Ok time to use everything we have leaned to prove the first of De Morgans "
-"laws.\n"
+"It is time to tackle our final bosses, the *De Morgans laws*. Use your "
+"tactics wisely!\n"
 "\n"
 msgstr ""
 
@@ -1231,32 +1238,33 @@ msgid ""
 msgstr ""
 
 #: De Morgan's laws level 1
-msgid "First hint"
+msgid "First Aid"
 msgstr ""
 
 #: De Morgan's laws level 1
 msgid ""
 "\n"
-"Note that if you have a goal `¬P` then `intro h` will turn your goal into "
-"`false`.\n"
+"If you have a goal `¬P` then `intro h` will turn your goal into `false` and "
+"give you\n"
+"an extra assumption `h : P`.\n"
 "\n"
 msgstr ""
 
 #: De Morgan's laws level 1
-msgid "Second hint"
+msgid "Second Aid"
 msgstr ""
 
 #: De Morgan's laws level 1
 msgid ""
 "\n"
-"Note that if you have a goal `false` and an assumption `h : ¬P`, then `apply "
-"h` will turn your goal \n"
+"If you have a goal `false` and an assumption `h : ¬P`, then `apply h` will "
+"turn your goal \n"
 "into `P`.\n"
 "\n"
 msgstr ""
 
 #: De Morgan's laws level 1
-msgid "Last hint"
+msgid "Third Aid"
 msgstr ""
 
 #: De Morgan's laws level 1
@@ -1266,6 +1274,10 @@ msgstr ""
 
 #: De Morgan's laws level 2
 msgid "De Morgan's laws, Final Boss"
+msgstr ""
+
+#: De Morgan's laws level 2
+msgid "For this final battle with De Morgan, you are on your own!\n"
 msgstr ""
 
 #: De Morgan's laws level 2
@@ -1309,27 +1321,29 @@ msgid "Bonus content"
 msgstr ""
 
 #: Bonus content level 1
-msgid "Lets try some harder implication statements. \n"
+msgid ""
+"If you're sad that the game is over, here is some bonus content to keep you "
+"going.\n"
 msgstr ""
 
 #: Bonus content level 1
-msgid "This is a long chain of implications.\n"
+msgid "A long chain of implications.\n"
 msgstr ""
 
 #: Bonus content level 2
-msgid "More nested implications\n"
+msgid "A nested chain ofimplications.\n"
 msgstr ""
 
 #: Bonus content level 3
-msgid "Even more nested implications\n"
+msgid "An even more nested implications\n"
 msgstr ""
 
 #: Bonus content level 4
-msgid "This is getting silly now\n"
+msgid "This is getting silly now!\n"
 msgstr ""
 
 #: Bonus content level 5
-msgid "How hard could it be?\n"
+msgid "Are we there yet?\n"
 msgstr ""
 
 #: Bonus content level 6
@@ -1337,7 +1351,7 @@ msgid "Boss fight"
 msgstr ""
 
 #: Bonus content level 6
-msgid "Time for a boss fight!\n"
+msgid "Time for another boss fight!\n"
 msgstr ""
 
 #: Bonus content level 7
@@ -1345,17 +1359,13 @@ msgid "Super Boss"
 msgstr ""
 
 #: Bonus content level 7
-msgid "Now go against the super boss.\n"
+msgid "Time for a super boss fight!\n"
 msgstr ""
 
 #: Bonus content level 7
 msgid ""
-"Lets prove that $(P \\implies Q) ∧ (Q \\implies R)$ is equivalent to \n"
-"  $(P \\implies R) ∧ ((P \\iff Q) ∨ (R \\iff Q))$\n"
-msgstr ""
-
-#: Bonus content level 7
-msgid ""
+"Congratulations! If you are reading this you are about to unlock a cheat "
+"code!\n"
 "Lean has more advanced tactics that can solve all of the levels very "
 "quickly. For example,\n"
 "using the `tauto!` tactic should allow you to solve the whole game! (but "
@@ -1364,4 +1374,15 @@ msgstr ""
 
 #: Bonus content level 7
 msgid "Cheat code"
+msgstr ""
+
+#: Bonus content level 7
+msgid ""
+"That's all folks! If you enjoyed this then check out the\n"
+"<a href=\"https://www.ma.imperial.ac.uk/~buzzard/xena/natural_number_game/\" "
+"target=\"blank\">Natural Numbers Game</a>\n"
+"and Kevin Buzzard's <a href=\"https://www.ma.imperial.ac.uk/~buzzard/xena/"
+"formalising-mathematics-2022/\" target=\"blank\">Formalising mathematics</a> "
+"course.\n"
+"\n"
 msgstr ""

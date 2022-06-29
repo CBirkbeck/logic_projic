@@ -7,25 +7,26 @@ lemma P_not_P_false (P : Prop) : P ∧ ¬ P → false := by {cc} --hide
 -- Level name : De Morgan's laws, First Boss
 
 /-
-Ok time to use everything we have leaned to prove the first of De Morgans laws.
+It is time to tackle our final bosses, the *De Morgans laws*. Use your tactics wisely!
 
 -/
 
-/-Hint : First hint
+/-Hint : First Aid
 
 You can do this only using `split`, `intro`, `apply`, `left`, `right`.
 
 -/
 
-/- Hint : Second hint
+/- Hint : Second Aid
 
-Note that if you have a goal `¬P` then `intro h` will turn your goal into `false`.
+If you have a goal `¬P` then `intro h` will turn your goal into `false` and give you
+an extra assumption `h : P`.
 
 -/
 
-/- Hint : Last hint
+/- Hint : Third Aid
 
-Note that if you have a goal `false` and an assumption `h : ¬P`, then `apply h` will turn your goal 
+If you have a goal `false` and an assumption `h : ¬P`, then `apply h` will turn your goal 
 into `P`.
 
 -/
@@ -47,7 +48,13 @@ begin
       apply h,
       right,
       exact hQ } },
-  { rintro ⟨hnP, hnQ⟩ (hP | hQ),
-    { apply hnP, exact hP },
-    { exact hnQ hQ } }
+  { intro h,
+    intro h2,
+    cases h,
+    cases h2,
+    apply h_left,
+    exact h2,
+    apply h_right,
+    exact h2,}
+    
 end

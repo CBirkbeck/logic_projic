@@ -3,7 +3,7 @@ import tactic --hide
 -- Level name : Boss fight 
 
 /-Lemma
-Time for a boss fight!
+Time for another boss fight!
 -/
 lemma boss_lemma_1 (P Q R : Prop) :
   (((P → Q → Q) → ((P → Q) → Q)) → R) →

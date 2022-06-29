@@ -3,7 +3,7 @@ import tactic --hide
 -- Level name : Associative laws pt 2
 
 /-
-Lets prove that `∨` is also associative.
+This level proves that `∨` is associative.
 -/
 
 /-Lemma

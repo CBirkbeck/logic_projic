@@ -2,7 +2,7 @@ import tactic --hide
 
 
 /-Lemma
-Even more nested implications
+An even more nested implications
 -/
 lemma lemma_8 (P Q R : Prop) : ((P → Q) → R) → ((Q → R) → P) → ((R → P) → Q) → P :=
 begin

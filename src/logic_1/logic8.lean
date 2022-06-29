@@ -1,12 +1,12 @@
 import tactic --hide
 
 /-
-Lets try some harder implication statements. 
+If you're sad that the game is over, here is some bonus content to keep you going.
 -/
 
 
 /-Lemma 
-This is a long chain of implications.
+A long chain of implications.
 -/
 lemma lemma_6 (P Q R S T : Prop) : (P → R) → (S → Q) → (R → T) → (Q → R) → S → T :=
 begin

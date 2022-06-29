@@ -1,7 +1,7 @@
 import tactic --hide
 
 /-Lemma
-More nested implications
+A nested chain ofimplications.
 -/
 lemma lemma_7 (P Q: Prop) : (P → Q) → ((P → Q) → P) → Q :=
 begin

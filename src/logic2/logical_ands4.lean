@@ -3,7 +3,7 @@ import tactic --hide
 -- Level name : Associative laws pt 1
 
 /-
-Lets prove that `P ∧ (Q ∧ R)` is equivalent to `(P ∧ Q) ∧ R`. We call this *associativity* of `∧`.
+This level proves that `∧` is *associative*.
 -/
 
 /-Lemma

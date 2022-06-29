@@ -3,7 +3,7 @@ import tactic --hide
 -- Level name : Distributive laws 1
 
 /-
-Lets prove that `P ∧ (Q ∨ R)` is equivalent to `(P ∧ Q) ∨ (P ∧ R)`. We call this property *distributivity*. 
+This level proves the *distributivity* of `∧` over `∨`.
 -/
 
 /-Lemma
