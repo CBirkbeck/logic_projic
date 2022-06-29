@@ -34,9 +34,9 @@ end
 One way to solve this level is to use `intro h` followed by `cases h`.  Notice that using `intro h`,
 introduces the assumption `h : false`. Lean thinks of `false` as empty, i.e having no elements. 
 `cases h` goes through each element in `h` and tries to prove our goal. 
-But since our assumption is `false` and it consists of no cases, the result is trivially true. 
+But since our assumption is `false` there are no cases, so the result is trivially true. 
 To make sense of this outside of Lean, we think that starting from a false statement we can have 
-any outcome, both true and false.
+any outcome, both true and false (see levels 3 & 4 of "True and False" world).
 
 -/
 

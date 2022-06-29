@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2022-06-27 17:37:04.140284\n"
+"POT-Creation-Date: 2022-06-29 12:17:37.050338\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 
@@ -12,11 +12,11 @@ msgstr ""
 
 #: intro
 msgid ""
-"# Captain De Morgan's logic Game\n"
+"# Dungeons and De Morgan's: The logic Game\n"
 "\n"
 "## By Chris Birkbeck and Niki Kalaydzhieva\n"
 "\n"
-"Learn some logic yo\n"
+"Go on a Mathemagical quest to learn some logic!\n"
 "\n"
 "# What is this game?\n"
 "\n"
@@ -326,7 +326,7 @@ msgstr ""
 msgid "Start with `intro p`.\n"
 msgstr ""
 
-#: Logical statements level 2 6 Not logic 1 4
+#: Logical statements level 2 6 Not logic 1 4 7
 msgid "Hint"
 msgstr ""
 
@@ -337,7 +337,7 @@ msgid ""
 "to name your hypotheses, e.g. `intros hp hq` if your goal is `P → Q → R`.\n"
 msgstr ""
 
-#: Logical statements level 2 7 And & Or 1 Not logic 3
+#: Logical statements level 2 7 And & Or 1 Not logic 4
 msgid "Tip"
 msgstr ""
 
@@ -389,7 +389,7 @@ msgid ""
 "the truth value of `P`. \n"
 msgstr ""
 
-#: Logical statements level 3
+#: Logical statements level 3 Not logic 4
 msgid "Why is this true?"
 msgstr ""
 
@@ -670,7 +670,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: And & Or level 3 Not logic 4
+#: And & Or level 3 Not logic 5
 msgid "Why does this work?"
 msgstr ""
 
@@ -1009,11 +1009,12 @@ msgid ""
 "introduces the assumption `h : false`. Lean thinks of `false` as empty, i.e "
 "having no elements. \n"
 "`cases h` goes through each element in `h` and tries to prove our goal. \n"
-"But since our assumption is `false` and it consists of no cases, the result "
-"is trivially true. \n"
+"But since our assumption is `false` there are no cases, so the result is "
+"trivially true. \n"
 "To make sense of this outside of Lean, we think that starting from a false "
 "statement we can have \n"
-"any outcome, both true and false.\n"
+"any outcome, both true and false (see levels 3 & 4 of \"True and False\" "
+"world).\n"
 "\n"
 msgstr ""
 
@@ -1036,54 +1037,93 @@ msgstr ""
 
 #: Not logic level 3
 msgid ""
+"In this level we will prove that `P ∧ ¬ P` is always false. This is an "
+"example of a *contradiction*.\n"
+"\n"
+msgstr ""
+
+#: Not logic level 3
+msgid "If $P$ is a logical statement, then $P ∧ ¬P$ is false.\n"
+msgstr ""
+
+#: Not logic level 4
+msgid ""
 "##  Proof by contradiction. \n"
 "\n"
-"In this level we want to prove that ` P ∧ (¬ P) → Q` is true for any "
-"propositions `P`\n"
-"and `Q`. One way to see that this is true is to note that left hand side is "
-"`false` and in the \n"
-"previous level we saw that `false → Q` is always true.\n"
-"\n"
-"Try solving this level using the `exfalso` tactic from the previous level.\n"
-msgstr ""
-
-#: Not logic level 3
-msgid ""
-"If $P$ and $Q$ are true/false statements, then\n"
-"$(P\\land(\\lnot P))\\implies Q.$\n"
-msgstr ""
-
-#: Not logic level 3
-msgid ""
-"If you want to use to use this result later on then you can type `apply "
-"(contra P Q)` where `P,Q` are\n"
-"the assumptions you want to use. You can also use the tactics `by_contra` "
-"and\n"
-"`contradiction` to achieve similar results. \n"
+"In this level we will see why proofs by contradiction are valid. The key is "
+"to note that for any\n"
+"logical statements `P,Q`, we have that ` P ∧ (¬ P) → Q` is true.\n"
 "\n"
 msgstr ""
 
 #: Not logic level 4
 msgid ""
+"We have just seen that `P ∧ (¬ P)`is always false and `false → Q` is always "
+"true.\n"
+msgstr ""
+
+#: Not logic level 4
+msgid "Start by introducing your assumption and then using `exfalso`.\n"
+msgstr ""
+
+#: Not logic level 4
+msgid ""
+"If $P$ and $Q$ are logical statements, then\n"
+"$(P\\land(\\lnot P))\\implies Q.$\n"
+msgstr ""
+
+#: Not logic level 4
+msgid ""
+"If you want to use to use this result later on then you can type <mark style "
+"=\"background-color : #ebdef0 \">`apply (contra P Q)`</mark> where `P,Q` "
+"are\n"
+"the assumptions you want to use. You can also use the tactic <mark style ="
+"\"background-color : #ebdef0 \">`by_contra`</mark>  \n"
+"to achieve similar results. \n"
+"\n"
+msgstr ""
+
+#: Not logic level 5
+msgid ""
 "We proved earlier that `(P → Q) → (¬ Q → ¬ P)`. The converse,\n"
 "that `(¬ Q → ¬ P) → (P → Q)` is certainly true, but trying to prove\n"
-"it using what we've learnt so far is impossible (because it is not provable "
-"in\n"
-"constructive logic). For example, after\n"
+"it using the tactics we've learnt so far is impossible. \n"
+msgstr ""
+
+#: Not logic level 5
+msgid ""
+" \n"
+"Suppose we tried to prove this with the tactics we have seen so far, then "
+"our proof might look \n"
+"something like:\n"
 "```\n"
 "intro h,\n"
 "intro p,\n"
 "rw not_iff_imp_false at h,\n"
 "rw not_iff_imp_false at h,\n"
 "```\n"
-"in the lemma below, you are left with\n"
+"You are then left with the following state:\n"
 "```\n"
 "P Q : Prop,\n"
 "h : (Q → false) → P → false\n"
 "p : P\n"
 "⊢ Q\n"
 "```\n"
-"The tools you have are not sufficient to continue, so we need a new tactic.\n"
+"and now we are stuck. In fact, using tactics such as `intro` and `apply` you "
+"will never be able to \n"
+"prove this lemma as this is not provable in \"constructive logic\". The key "
+"in proving this is to use \n"
+"Lean's version of a truth table!\n"
+"\n"
+msgstr ""
+
+#: Not logic level 5
+msgid "Why is this impossible?"
+msgstr ""
+
+#: Not logic level 5
+msgid ""
+"In order to continue we need a new tactic.\n"
 "\n"
 "## The `by_cases` tactic\n"
 "\n"
@@ -1093,36 +1133,27 @@ msgid ""
 "\n"
 "**Note the semicolon**! It means \"do the next tactic to all the goals, not "
 "just the first\".\n"
-"After it, there are four goals, one for each of the four possibilities "
-"PQ=TT, TF, FT, FF.\n"
+"After doing this in the lemma below, you will see there are four goals, one "
+"for each of the four \n"
+"possibilities for `P,Q`, i.e., `P Q = true true`, `true false`, `false "
+"true`, `false false`.\n"
 "You can see that `hp` is a proof of `P` in some of the goals, and a proof of "
 "`¬ P` in others.\n"
 "Similarly with `hq`. \n"
 "\n"
-"Note that using `by_cases` is the same as doing a truth table for the result "
-"you want to prove.\n"
-"(All the levels in this game can be done using truth tables, but this will "
-"quickly become tedious!). \n"
-"\n"
-"You may also want to use some of the previous results we have used, for "
-"example the `contra` lemma \n"
-"we proved in the previous level.\n"
+"Note that using `by_cases` is Lean's version of a truth table, where each "
+"row of a truth table corresponds\n"
+"to a new goal.\n"
 "\n"
 msgstr ""
 
-#: Not logic level 4
-msgid ""
-"Along with `by_cases hp : P; by_cases hq : Q,` you may also want to use "
-"`apply contra P false`.\n"
-msgstr ""
-
-#: Not logic level 4
+#: Not logic level 5
 msgid ""
 "If $P$ and $Q$ are true/false statements, then\n"
 "$(\\lnot Q\\implies \\lnot P)\\implies(P\\implies Q).$\n"
 msgstr ""
 
-#: Not logic level 4
+#: Not logic level 5
 msgid ""
 "This approach assumed that `P ∨ ¬ P` was true; then `by_cases` tactic just "
 "does `cases` on\n"
@@ -1131,7 +1162,7 @@ msgid ""
 "using tactics such as `intro` and `apply`.\n"
 msgstr ""
 
-#: Not logic level 4
+#: Not logic level 5
 msgid ""
 " \n"
 "The ``by_cases`` tactic is a simple truth table tactic: ``by_cases P`` turns "
@@ -1153,22 +1184,28 @@ msgid ""
 "``hP : P`` and ``hP : ¬P``.\n"
 msgstr ""
 
-#: Not logic level 5
+#: Not logic level 6
 msgid ""
 "If $P$ is a logical statement then $P \\implies ¬P$ implies $"
 "\\mathrm{false}$.\n"
 msgstr ""
 
-#: Not logic level 6
+#: Not logic level 7
 msgid "You might need to at somepoint use `rw not_iff_imp_false,`.\n"
 msgstr ""
 
-#: Not logic level 6
+#: Not logic level 7
 msgid "If $P$ is a logical statement then $P \\implies ¬ ¬P$.\n"
 msgstr ""
 
-#: Not logic level 7
+#: Not logic level 8
 msgid "If $P$ is a logical statement then $¬(¬P) \\implies P$.\n"
+msgstr ""
+
+#: Not logic level 9
+msgid ""
+"If $P, Q$ are logical statements then $(P \\implies Q)$ is equivalent to "
+"$(¬P) ∨ Q$.\n"
 msgstr ""
 
 #: world_config

@@ -1,9 +1,9 @@
 /-
-# Captain De Morgan's logic Game
+# Dungeons and De Morgan's: The logic Game
 
 ## By Chris Birkbeck and Niki Kalaydzhieva
 
-Learn some logic yo
+Go on a Mathemagical quest to learn some logic!
 
 # What is this game?
 

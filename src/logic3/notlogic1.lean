@@ -6,23 +6,29 @@ lemma not_iff_imp_false (P : Prop) : ¬ P ↔ P → false := iff.rfl -- hide
 /-
 ##  Proof by contradiction. 
 
-In this level we want to prove that ` P ∧ (¬ P) → Q` is true for any propositions `P`
-and `Q`. One way to see that this is true is to note that left hand side is `false` and in the 
-previous level we saw that `false → Q` is always true.
+In this level we will see why proofs by contradiction are valid. The key is to note that for any
+logical statements `P,Q`, we have that ` P ∧ (¬ P) → Q` is true.
 
-Try solving this level using the `exfalso` tactic from the previous level.
+-/
+
+/-Hint : Why is this true?
+We have just seen that `P ∧ (¬ P)`is always false and `false → Q` is always true.
+-/
+
+/- Hint : Hint
+Start by introducing your assumption and then using `exfalso`.
 -/
 
 /- Lemma 
-If $P$ and $Q$ are true/false statements, then
+If $P$ and $Q$ are logical statements, then
 $(P\land(\lnot P))\implies Q.$
 -/
 lemma contra (P Q : Prop) : (P ∧ ¬ P) → Q :=
 begin
   intro h,
+  exfalso,
   cases h with p np,
   rw not_iff_imp_false at np,
-  exfalso,
   apply np,
   exact p,
 
@@ -30,9 +36,9 @@ begin
 end
 
 /-Hint : Tip
-If you want to use to use this result later on then you can type `apply (contra P Q)` where `P,Q` are
-the assumptions you want to use. You can also use the tactics `by_contra` and
-`contradiction` to achieve similar results. 
+If you want to use to use this result later on then you can type <mark style ="background-color : #ebdef0 ">`apply (contra P Q)`</mark> where `P,Q` are
+the assumptions you want to use. You can also use the tactic <mark style ="background-color : #ebdef0 ">`by_contra`</mark>  
+to achieve similar results. 
 
 -/
 

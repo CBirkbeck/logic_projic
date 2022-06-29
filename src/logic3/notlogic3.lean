@@ -2,6 +2,7 @@ import tactic --hide
 
 lemma not_iff_imp_false (P : Prop) : ¬ P ↔ P → false := iff.rfl -- hide
 lemma contra (P Q : Prop) : (P ∧ ¬ P) → Q := by {cc} --hide
+lemma P_not_P_false (P : Prop) : P ∧ ¬ P → false := by {cc} --hide
 
 -- Level name : De Morgan's laws, First Boss
 

@@ -3,26 +3,39 @@ import tactic --hide
 
 lemma not_iff_imp_false (P : Prop) : ¬ P ↔ P → false := iff.rfl -- hide
 lemma contra (P Q : Prop) : (P ∧ ¬ P) → Q := by {cc} --hide
+lemma P_not_P_false (P : Prop) : P ∧ ¬ P → false := by {cc} --hide
 
 /-
 We proved earlier that `(P → Q) → (¬ Q → ¬ P)`. The converse,
 that `(¬ Q → ¬ P) → (P → Q)` is certainly true, but trying to prove
-it using what we've learnt so far is impossible (because it is not provable in
-constructive logic). For example, after
+it using the tactics we've learnt so far is impossible. 
+-/
+
+/-Hint : Why is this impossible?
+ 
+Suppose we tried to prove this with the tactics we have seen so far, then our proof might look 
+something like:
 ```
 intro h,
 intro p,
 rw not_iff_imp_false at h,
 rw not_iff_imp_false at h,
 ```
-in the lemma below, you are left with
+You are then left with the following state:
 ```
 P Q : Prop,
 h : (Q → false) → P → false
 p : P
 ⊢ Q
 ```
-The tools you have are not sufficient to continue, so we need a new tactic.
+and now we are stuck. In fact, using tactics such as `intro` and `apply` you will never be able to 
+prove this lemma as this is not provable in "constructive logic". The key in proving this is to use 
+Lean's version of a truth table!
+
+-/
+
+/-
+In order to continue we need a new tactic.
 
 ## The `by_cases` tactic
 
@@ -30,20 +43,14 @@ Instead of starting with all the `intro`s, try this instead: <mark style ="backg
 
 
 **Note the semicolon**! It means "do the next tactic to all the goals, not just the first".
-After it, there are four goals, one for each of the four possibilities PQ=TT, TF, FT, FF.
+After doing this in the lemma below, you will see there are four goals, one for each of the four 
+possibilities for `P,Q`, i.e., `P Q = true true`, `true false`, `false true`, `false false`.
 You can see that `hp` is a proof of `P` in some of the goals, and a proof of `¬ P` in others.
 Similarly with `hq`. 
 
-Note that using `by_cases` is the same as doing a truth table for the result you want to prove.
-(All the levels in this game can be done using truth tables, but this will quickly become tedious!). 
+Note that using `by_cases` is Lean's version of a truth table, where each row of a truth table corresponds
+to a new goal.
 
-You may also want to use some of the previous results we have used, for example the `contra` lemma 
-we proved in the previous level.
-
--/
-
-/-Hint : Hint
-Along with `by_cases hp : P; by_cases hq : Q,` you may also want to use `apply contra P false`.
 -/
 
 
@@ -58,16 +65,17 @@ begin
   exact q,
   intros h hh,
   exfalso,
-  apply contra P false,
-  split,
-  exact hh,
+  rw not_iff_imp_false at h,
+  rw not_iff_imp_false at h,
+  rw not_iff_imp_false at q,
   apply h,
   exact q,
+  apply p,
   intros h hh,
   exact q,
   intros h hh,
   exfalso,
-  apply contra P false,
+  apply P_not_P_false P,
   split,
   exact hh,
   apply h,

@@ -72,11 +72,13 @@ id = 6
 parents = [4]
     levels = [  "src/logic3/notlogic.lean",
                 "src/true_false/tf6.lean",
+                "src/logic3/pnotpfalse.lean",
                 "src/logic3/notlogic1.lean",
                  "src/logic3/notlogic2.lean",
                   "src/logic3/notlogicb.lean",
                 "src/logic3/notlogicb2.lean",
                  "src/logic3/notlogicb3.lean",
+                 "src/logic3/notlogicb4.lean",
             ]
 
 [[worlds]]
